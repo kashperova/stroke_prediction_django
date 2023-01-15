@@ -3,8 +3,7 @@
 <br>https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset </br>
 <br><b>Kaggle Notebook: https://www.kaggle.com/code/skashperova/stroke-prediction-xgboost/ </b>
 ## Description
-<br> This is a pet project whose main goal was to create a web application for predicting the probability of a person having a stroke based on 10 features 
-- gender, age, hypertension, cardiovascular diseases, average blood glucose level, family and work status, place of residence, height, weight and smoking.</br>
+<br> This is a pet project whose main goal was to create a web application for predicting the probability of a person having a stroke based on 10 features: gender, age, hypertension, cardiovascular diseases, average blood glucose level, family and work status, place of residence, height, weight and smoking.</br>
 <br>I decided to create a web-site where the user could enter the above data. Since not everyone knows their average blood glucose level, 
 I decided not to include this feature in the list of respondents, but to try to predict its value using the fuzzy extrapolation method. </br>
 <br>I created Kaggle notebook (kernel) to explain all my actions with data. I also added table of content, where you can find description of dataset, EDA, data preprocessing, modeling and evaluation.
@@ -20,10 +19,13 @@ In addition, I paid attention to tuning model during training. </br>
 ## Screenshots
 <br>Below are a few screenshots of the web application view, as well as instructions for launching. You can test application on 2 languages: Ukranian and English<br>
 <br>Main view of Django application</br>
+<hr>
 ![img.png](screenshots/main_view.png)
 <br></br><br>Example of user feature field</br>
+<hr>
 ![img.png](screenshots/quiz.png)
 <br></br><br>View of prediction result</br>
+<hr>
 ![img.png](screenshots/result.png)
 <br></br>
 ## Guide how to run and test project
