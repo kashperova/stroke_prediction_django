@@ -19,13 +19,10 @@ In addition, I paid attention to tuning model during training. </br>
 ## Screenshots
 <br>Below are a few screenshots of the web application view, as well as instructions for launching. You can test application on 2 languages: Ukranian and English<br>
 <br>Main view of Django application</br>
-<hr>
 ![img.png](screenshots/main_view.png)
 <br></br><br>Example of user feature field</br>
-<hr>
 ![img.png](screenshots/quiz.png)
 <br></br><br>View of prediction result</br>
-<hr>
 ![img.png](screenshots/result.png)
 <br></br>
 ## Guide how to run and test project
