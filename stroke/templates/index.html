@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PredictStroke</title>
+    {% load static %}
+    <link rel= "stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<div id="lang_container">
+    <a href = "{% url 'change_lang'  lang='eng'%}" class="button" id="eng">
+        ENG
+    </a>
+    <a href = "{% url 'change_lang' lang='ua'%}"  class="button" id="ukr">
+        UA
+    </a>
+</div>
+{% if lang == 'eng'%}
+    <h2 align="center">Pet-project "PredictStroke"</h2>
+    <div name="predict_container">
+        <p>Pet project for prediction of the stroke occurrence in humans using one of the datasets presented on Kaggle.</p>
+    <a href = "{% url 'predict' lang='eng' pk=10 %}" class="button" name="predict">
+        Start
+    </a>
+    </div>
+{% elif lang == 'ua' %}
+    <h2 align="center">Пет-проєкт "Передбачення інсульту"</h2>
+
+    <div name="predict_container">
+        <p>Pet-проект із прогнозування виникнення інсульту у людей з використанням одного з наборів даних, представлених на Kaggle.</p>
+    <a href = "{% url 'predict' lang='ua' pk='10'%}" class="button" name="predict">
+        Почати
+    </a>
+    </div>
+{% endif %}
+</body>
+</html>

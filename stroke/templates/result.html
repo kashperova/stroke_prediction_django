@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PredictStroke</title>
+        {% load static %}
+    <link rel= "stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<div name="predict_container">
+    <a href = "{% url 'home_page_return' %}" class="button" id="home_page_btn">
+        Predict Stroke
+    </a>
+</div>
+<div name="predict_container">
+    {% if lang == 'eng' %}
+        <p>Your result is - {{result_prediction}}. </p>
+        <p>Probability of prediction is {{proba}}%</p>
+    {% elif lang == 'ua' %}
+        <p>Ваш результат - {{result_prediction}}. </p>
+        <p>Ймовірнсть прогнозу складає {{proba}}%</p>
+    {% endif %}
+</div>
+</body>
+</html>

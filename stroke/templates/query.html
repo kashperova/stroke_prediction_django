@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PredictStroke</title>
+        {% load static %}
+    <link rel= "stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <script>
+
+    </script>
+</head>
+<body>
+<div name="predict_container">
+    <a href = "{% url 'home_page_return' %}" class="button" id="home_page_btn">
+        Predict Stroke
+    </a>
+<p name="explanation"></p>
+<div>
+    {% if lang == 'eng' %}
+        <p name="question">{{ text_eng }}</p>
+        <hr>
+        {% if quest_counter == 10 %}
+            <form method="get" action="{% url 'predict' lang='eng' pk=quest_counter%}">
+                <select name="select">
+                {% for answer in answers_eng %}
+                    <option name="item">{{answer}}</option>
+                {% endfor %}
+                </select>
+                <div name="predict_container">
+                 <button align="center" name="action" value="next">Next</button>
+                </div>
+            </form>
+        {% elif quest_counter == 9 or quest_counter == 3 or quest_counter == 2%}
+            <form method="get" action="{% url 'predict' lang='eng' pk=quest_counter%}">
+                <input name="select" type="number">
+                <div name="predict_container">
+                 <button align="center" name="action" value="next">Next</button>
+                <button align="center" name="action" value="previous">Previous</button>
+                </div>
+            </form>
+        {% elif quest_counter > 1%}
+             <form method="get" action="{% url 'predict' lang='eng' pk=quest_counter%}">
+                <select name="select">
+                {% for answer in answers_eng %}
+                    <option name="item">{{answer}}</option>
+                {% endfor %}
+                </select>
+                 <div name="predict_container">
+                 <button type="submit" align="center" name="action" value="next">Next</button>
+                <button type="submit" align="center" name="action" value="previous">Previous</button>
+                 </div>
+             </form>
+        {% else %}
+         <form method="get" action="{% url 'predict' lang='eng' pk=quest_counter%}">
+             <select name="select">
+                {% for answer in answers_eng %}
+                    <option name="item">{{answer}}</option>
+                {% endfor %}
+                </select>
+             <div name="predict_container">
+            <button align="center" name="action" value="finish">Finish</button>
+            <button align="center" name="action" value="previous">Previous</button>
+             </div>
+         </form>
+        {% endif %}
+    {% elif lang == 'ua' %}
+        <p name="question">{{ text_ua }}</p>
+        <hr>
+        {% if quest_counter == 10 %}
+            <form method="get" action="{% url 'predict' lang='ua' pk=quest_counter %}">
+                <select name="select">
+                {% for answer in answers_ua %}
+                    <option name="item">{{answer}}</option>
+                {% endfor %}
+                </select>
+                <div name="predict_container">
+                 <button align="center" name="action" value="next">Наступний крок</button>
+                </div>
+            </form>
+        {% elif quest_counter == 9 or quest_counter == 3 or quest_counter == 2%}
+            <form method="get" action="{% url 'predict' lang='ua' pk=quest_counter %}">
+                <input name="select" type="number">
+                <div name="predict_container">
+                 <button align="center" name="action" value="next">Наступний крок</button>
+                <button align="center" name="action" value="previous">Попередній крок</button>
+                </div>
+            </form>
+        {% elif quest_counter > 1%}
+             <form method="get" action="{% url 'predict' lang='ua' pk=quest_counter %}">
+                <select name="select">
+                {% for answer in answers_ua %}
+                    <option name="item">{{answer}}</option>
+                {% endfor %}
+                </select>
+                 <div name="predict_container">
+                 <button type="submit" align="center" name="action" value="next">Наступний крок</button>
+                <button type="submit" align="center" name="action" value="previous">Попередній крок</button>
+                 </div>
+             </form>
+        {% else %}
+         <form method="get" action="{% url 'predict' lang='ua' pk=quest_counter%}">
+             <select name="select">
+                {% for answer in answers_ua %}
+                    <option name="item">{{answer}}</option>
+                {% endfor %}
+                </select>
+             <div name="predict_container">
+            <button align="center" name="action" value="finish">Завершити</button>
+            <button align="center" name="action" value="previous">Попередній крок</button>
+             </div>
+         </form>
+        {% endif %}
+    {% endif %}
+</div>
+</div>
+</body>
+</html>
