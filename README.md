@@ -11,7 +11,7 @@ In the process of exploratory data analysis. I visualized the relation between p
 I visualized the distributions of numerical features and made some important conclusions about it.
 The gradient boosting algorithm XGClassifier from XGBoost was chosen as a model for solving the competition. 
 In addition, I paid attention to tuning model during training. </br>
-<br>ROC accuracy = 0.86 </br>
+<br>ROC accuracy = 0.89</br>
 <br><b>Libraries for data visualization: </b>Altair, Seaborn, Matplotlib</br>
 <br><b>Libraries for data preprocessing and modeling: </b>  Pandas, Numpy, Scikit-Learn, XGBoost</br>
 <br><b>Python frameworks: </b>  Django</br>
